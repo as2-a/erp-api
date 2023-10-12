@@ -8,7 +8,7 @@
     "buld": "npm install",
     "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "echo hello"
+    "vercel-build": "npm install -g pg --save && echo hello"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,7 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
     "path": "^0.12.7",
-    "pg": "^8.10.0",
+    "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.0"
   }
