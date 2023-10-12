@@ -1,17 +1,12 @@
+const pg = require('pg');
 const { Sequelize } = require('sequelize');
 
-const  { config } = require('../../src/config/config');
+const { config } = require('../../src/config/config');
 const setupModels = require('./../db/models');
-  
-const sequelize = new Sequelize(
-    config.dbName, // name database
-    config.dbUser, // user database
-    config.dbPassword, // password database
-    {
-      host: config.dbHost,
-      dialect: 'postgresql' 
-    }
-  );
+
+const sequelize = new Sequelize(`postgres://${config.dbUser}:${config.dbPassword}@${config.dbHost}:${config.dbPort}/${config.dbName}`, {
+  dialectModule: pg
+});
 
 sequelize.sync();
 setupModels(sequelize);
