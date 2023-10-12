@@ -1,8 +1,0 @@
-[build]
-
-functions = "functions"
-
-[[redirects]]
-to="/.netlify/functions/app/:splay"
-from="/*"
-status=200
