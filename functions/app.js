@@ -10,10 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('BANKS-API');
-});
-
-app.use('/.netlify/functions/app/user', userRouter);
+app.use('/', userRouter);
 
 module.exports.handler = serverless(app);
